@@ -49,11 +49,11 @@ public class CurrentPerformanceStatus {
 		return route.getId();
 	}
 	
-	public void setTripId(int id){
+	public void setTripId(String id){
 		trip.setId(id);
 	}
 	
-	public int getTripId(){
+	public String getTripId(){
 		return trip.getId();
 	}
 	

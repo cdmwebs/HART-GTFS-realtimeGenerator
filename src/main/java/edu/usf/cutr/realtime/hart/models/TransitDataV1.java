@@ -70,7 +70,7 @@ public class TransitDataV1 {
         } else if(colName.equals("route_id")){
             cps.setRouteId((Integer)data);
         } else if(colName.equals("trip_id")){
-            cps.setTripId((Integer)data);
+            cps.setTripId((String)data);
         } else if(colName.equals("incident_desc")){
             cps.setIncidentDesc((String)data);
         } else if(colName.equals("last_stop_deviation")){
@@ -99,6 +99,6 @@ public class TransitDataV1 {
     }
 	
 	public String toString(){
-		return ((Integer)cps.getTripId()).toString();
+		return cps.getTripId();
 	}
 }

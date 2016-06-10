@@ -171,13 +171,13 @@ public class HartToGtfsRealtimeServiceV1{
 			int delay = v.getPredictedDeviation() * 60; // in seconds
 			String nextStopId = ntp.getId();
 			int routeId = cps.getRouteId();
-			int tripId = cps.getTripId();
+			String tripId = cps.getTripId();
 
 			/**
 			 * Trip Descriptor
 			 */
 			TripDescriptor.Builder tripDescriptor = TripDescriptor.newBuilder();
-			tripDescriptor.setTripId(Integer.toString(tripId));
+			tripDescriptor.setTripId(tripId);
 			tripDescriptor.setRouteId(Integer.toString(routeId));
 
 			/**
@@ -213,7 +213,7 @@ public class HartToGtfsRealtimeServiceV1{
 			tripUpdate.setVehicle(vehicleDescriptor);
 
 			FeedEntity.Builder tripUpdateEntity = FeedEntity.newBuilder();
-			tripUpdateEntity.setId(Integer.toString(vehicleId));
+			tripUpdateEntity.setId(tripId);
 			tripUpdateEntity.setTripUpdate(tripUpdate);
 
 			tripUpdates.addEntity(tripUpdateEntity);
@@ -235,13 +235,13 @@ public class HartToGtfsRealtimeServiceV1{
 			int speed = v.getAverageSpeed();
 			int heading = v.getHeading();
 			int vehicleId = v.getId();
-			int tripId = cps.getTripId();
+			String tripId = cps.getTripId();
 
 			/**
 			 * Trip Descriptor
 			 */
 			TripDescriptor.Builder tripDescriptor = TripDescriptor.newBuilder();
-			tripDescriptor.setTripId(Integer.toString(tripId));
+			tripDescriptor.setTripId(tripId);
 
 			/**
 			 * Vehicle Descriptor

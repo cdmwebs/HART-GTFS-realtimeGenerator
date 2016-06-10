@@ -45,7 +45,7 @@ public class RetrieveTransitDataV1 {
 				"				v.vehicle_position_date_time," +
 				"				cps.direction_code_id as 'route_direction'," +
 				"				cps.route_id," +
-				"				cps.trip_id," +
+				"				(trip.trip_id_external + '-Weekday') as trip_id," +
 				"				its.incident_desc," +
 				"				cps.deviation as 'last_stop_deviation'," +
 				"				v.predicted_deviation," +
@@ -71,6 +71,7 @@ public class RetrieveTransitDataV1 {
 				"				cps.sched_time as 'status_scheduled_time'" +
 				"			FROM" +
 				"				dbo.current_performance_status cps" +
+				"			JOIN dbo.trip on cps.trip_id = trip.trip_id" +
 				"			JOIN dbo.vehicle v" +
 				"				ON" +
 				"					cps.vehicle_id = v.vehicle_id" +
@@ -116,7 +117,7 @@ public class RetrieveTransitDataV1 {
 				"				v.vehicle_position_date_time," +
 				"				cps.direction_code_id as 'route_direction'," +
 				"				cps.route_id," +
-				"				cps.trip_id," +
+				"				(trip.trip_id_external + '-Weekday') as trip_id," +
 				"				its.incident_desc," +
 				"				cps.deviation," +
 				"				v.predicted_deviation," +
@@ -136,6 +137,7 @@ public class RetrieveTransitDataV1 {
 				"				" +
 				"			FROM" +
 				"				dbo.current_performance_status cps" +
+				"			JOIN dbo.trip on cps.trip_id = trip.trip_id" +
 				"			JOIN dbo.vehicle v" +
 				"				ON" +
 				"					cps.vehicle_id = v.vehicle_id" +
@@ -172,7 +174,7 @@ public class RetrieveTransitDataV1 {
 				"				v.vehicle_position_date_time," +
 				"				cps.direction_code_id as 'route_direction'," +
 				"				cps.route_id," +
-				"				cps.trip_id," +
+				"				(trip.trip_id_external + '-Weekday') as trip_id," +
 				"				its.incident_desc," +
 				"				cps.deviation," +
 				"				v.predicted_deviation," +
@@ -191,6 +193,7 @@ public class RetrieveTransitDataV1 {
 				"				cps.sched_time" +
 				"			FROM" +
 				"				dbo.current_performance_status cps" +
+				"			JOIN dbo.trip on cps.trip_id = trip.trip_id" +
 				"			JOIN dbo.vehicle v" +
 				"				ON" +
 				"					cps.vehicle_id = v.vehicle_id" +
