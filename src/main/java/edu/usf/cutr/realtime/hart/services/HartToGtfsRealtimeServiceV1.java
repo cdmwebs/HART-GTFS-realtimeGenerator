@@ -191,6 +191,7 @@ public class HartToGtfsRealtimeServiceV1{
 			 */
 			StopTimeEvent.Builder arrival = StopTimeEvent.newBuilder();
 			arrival.setDelay(delay);
+			arrival.setTime(ntp.getScheduledTime().getTime() / 1000L);
 
 			/**
 			 * StopTime Update
@@ -202,6 +203,7 @@ public class HartToGtfsRealtimeServiceV1{
 			stopTimeUpdate.setStopId(ntp.getId());
 			stopTimeUpdate.setStopSequence(ntp.getGlobalSequenceNumber());
 			stopTimeUpdate.setArrival(arrival);
+			stopTimeUpdate.setDeparture(arrival);
 			if(nextStopId==null){
 				continue;
 			}
