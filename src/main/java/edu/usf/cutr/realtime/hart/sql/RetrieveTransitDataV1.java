@@ -50,11 +50,11 @@ public class RetrieveTransitDataV1 {
 				"				cps.deviation as 'last_stop_deviation'," +
 				"				v.predicted_deviation," +
 				"		        CAST( (select top 1 b.bs_id from bus_stop_data b" +
-				"		        where  b.booking_num = 2 and b.route_id = cps.route_id and" +
+				"		        where  b.booking_num = 11 and b.route_id = cps.route_id and" +
 				"		               b.direction_code_id = cps.direction_code_id and" +
 				"		               b.seq_num = ctp.global_seq_num) as varchar(6)) as 'previous_stop_id'," +
 				"		        CAST( (select top 1 b.bs_id from bus_stop_data b" +
-				"		        where  b.booking_num = 2 and b.route_id = cps.route_id and" +
+				"		        where  b.booking_num = 11 and b.route_id = cps.route_id and" +
 				"		               b.direction_code_id = cps.direction_code_id and" +
 				"		               b.seq_num = ntp.global_seq_num) as varchar(6)) as 'next_stop_id'," +
 				"				(CAST((" +
@@ -122,7 +122,7 @@ public class RetrieveTransitDataV1 {
 				"				v.predicted_deviation," +
 				"				null as 'previous_stop_id'," +
 				"		        CAST( (select top 1 b.bs_id from bus_stop_data b" +
-				"		        where  b.booking_num = 2 and b.route_id = cps.route_id and" +
+				"		        where  b.booking_num = 11 and b.route_id = cps.route_id and" +
 				"		               b.direction_code_id = cps.direction_code_id and" +
 				"		               b.seq_num = ntp.global_seq_num) as varchar(6)) as 'next_stop_id'," +
 				"				(CAST((" +
@@ -177,7 +177,7 @@ public class RetrieveTransitDataV1 {
 				"				cps.deviation," +
 				"				v.predicted_deviation," +
 				"		        CAST( (select top 1 b.bs_id from bus_stop_data b" +
-				"		        where  b.booking_num = 2 and b.route_id = cps.route_id and" +
+				"		        where  b.booking_num = 11 and b.route_id = cps.route_id and" +
 				"		               b.direction_code_id = cps.direction_code_id and" +
 				"		               b.seq_num = ctp.global_seq_num) as varchar(6)) as 'previous_stop_id'," +
 				"		        null as 'next_stop_id'," +

@@ -24,7 +24,7 @@ import org.onebusway.gtfs_realtime.exporter.GtfsRealtimeExporterModule;
 import com.google.inject.AbstractModule;
 import com.google.inject.Module;
 
-import edu.usf.cutr.realtime.hart.services.HartToGtfsRealtimeServiceV2;
+import edu.usf.cutr.realtime.hart.services.HartToGtfsRealtimeServiceV1;
 
 /**
  * 
@@ -43,8 +43,8 @@ public class HartToGtfsRealtimeModule extends AbstractModule{
 	@Override
 	protected void configure() {
 		// TODO Auto-generated method stub
-//		bind(HartToGtfsRealtimeServiceV1.class);
-	  bind(HartToGtfsRealtimeServiceV2.class);
+		bind(HartToGtfsRealtimeServiceV1.class);
+	  // bind(HartToGtfsRealtimeServiceV2.class);
 	}
 
 }

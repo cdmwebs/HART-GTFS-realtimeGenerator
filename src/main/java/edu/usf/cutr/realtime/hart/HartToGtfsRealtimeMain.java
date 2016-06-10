@@ -37,7 +37,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
-import edu.usf.cutr.realtime.hart.services.HartToGtfsRealtimeServiceV2;
+import edu.usf.cutr.realtime.hart.services.HartToGtfsRealtimeServiceV1;
 
 /**
  * 
@@ -63,20 +63,20 @@ public class HartToGtfsRealtimeMain {
 		m.run(args);
 	}
 
-//	private HartToGtfsRealtimeServiceV1 _provider;
-	private HartToGtfsRealtimeServiceV2 _provider;
+	private HartToGtfsRealtimeServiceV1 _provider;
+	// private HartToGtfsRealtimeServiceV2 _provider;
 
 	private LifecycleService _lifecycleService;
 
-//	@Inject
-//	public void setProvider(HartToGtfsRealtimeServiceV1 provider) {
-//		_provider = provider;
-//	}
-	
 	@Inject
-  public void setProvider(HartToGtfsRealtimeServiceV2 provider) {
-    _provider = provider;
-  }
+	public void setProvider(HartToGtfsRealtimeServiceV1 provider) {
+		_provider = provider;
+	}
+	
+// 	@Inject
+//   public void setProvider(HartToGtfsRealtimeServiceV2 provider) {
+//     _provider = provider;
+//   }
 
 	@Inject
 	public void setLifecycleService(LifecycleService lifecycleService) {
